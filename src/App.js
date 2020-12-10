@@ -27,25 +27,12 @@ function App() {
 
   }, []);
 
-// const [loading, setLoading] = useState([]);
-
-//   useEffect (() => {
-//     loadData();
-//   }, [])
-
-//   const loadData = async () => {
-//     const response = await fetch(`${BASE_URL}/planetary/apod?api_key=${API_KEY}&date=${date}`)
-//     const loading = await response.json();
-//     setLoading(loading);
-
-
-//   }
 
   return (
     <div className="App">
       <h1>Nasa Image of the Day</h1>
        <Header photoTitle={nasaData.title}/>
-       <Photo photoURL={nasaData.url}/>
+       {nasaData && <Photo photoURL={nasaData.url}/>}
        <Description explanation={nasaData.explanation}/>
     </div>
   )
